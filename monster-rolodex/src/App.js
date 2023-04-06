@@ -6,9 +6,11 @@ import './App.css';
 
 
 const App = () => {
-  const [searchField, setSearchFiled] = useState("a"); // [value, setValue]
+  const [searchField, setSearchFiled] = useState(""); // [value, setValue]
   const [monsters, setMonsters] = useState([]);
   const [filteredMonsters, setFilteredMonsters] = useState(monsters);
+
+  console.log("rendered");
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/users')
@@ -21,7 +23,7 @@ const App = () => {
       return monster.name.toLowerCase().includes(searchField);
     });
 
-    console.log("effect is firing");
+    // console.log("effect is firing");
     setFilteredMonsters(newFilteredMonsters);
   }, [monsters, searchField]);
 

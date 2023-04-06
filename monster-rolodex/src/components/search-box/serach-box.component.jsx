@@ -6,6 +6,7 @@ const searchBox = ({className, placeholder, onChangeHandler}) => (
           type="search"
           placeholder={placeholder}
           onChange={onChangeHandler} 
+
           
           />
     )
